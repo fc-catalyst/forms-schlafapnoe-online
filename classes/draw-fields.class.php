@@ -137,7 +137,7 @@ class FCP_Forms__Draw {
     
     private function field_textarea($a) {
     
-        if ( $a->tinymce === true || is_admin() && $a->tinymce === 'admin' || !is_admin() && $a->tinymce === 'front' ) {
+        if ( isset( $a->tinymce ) && ( $a->tinymce === true || is_admin() && $a->tinymce === 'admin' || !is_admin() && $a->tinymce === 'front' ) ) {
             $buttons = ['undo', 'redo', '|', 'formatselect', 'bold', 'italic', '|', 'link', 'unlink', '|', 'bullist', 'numlist'];
         
             wp_editor(
@@ -163,11 +163,11 @@ class FCP_Forms__Draw {
         <textarea
             name="<?php $this->e_field_name( $a->name ) ?>"
             id="<?php $this->e_field_id( $a->name ) ?>"
-            rows="<?php echo $a->rows ? $a->rows : '10' ?>" cols="<?php echo $a->cols ? $a->cols : '50' ?>"
-            placeholder="<?php echo $a->placeholder ?>"
-            class="<?php echo $a->warning ? 'fcp-f-invalid' : '' ?>"
-            <?php echo $a->autofill ? 'data-fcp-autofill="'.$a->autofill.'"' : '' ?>
-        ><?php echo esc_textarea( isset( $a->savedValue ) && $a->savedValue ? $a->savedValue : $a->value ) ?></textarea>
+            rows="<?php echo $a->rows ?? '10' ?>" cols="<?php echo $a->cols ?? '50' ?>"
+            placeholder="<?php echo $a->placeholder ?? '' ?>"
+            class="<?php echo isset( $a->warning ) ? 'fcp-f-invalid' : '' ?>"
+            <?php echo isset( $a->autofill ) && $a->autofill ? 'data-fcp-autofill="'.$a->autofill.'"' : '' ?>
+        ><?php echo esc_textarea( isset( $a->savedValue ) && $a->savedValue ? $a->savedValue : ( $a->value ?? '' ) ) ?></textarea>
         <?php
     }
 
@@ -534,6 +534,7 @@ class FCP_Forms__Draw {
                 <?php echo isset( $o->width ) ? 'fcp-form--' . $o->width : '' ?>
             "
             method="<?php echo $o->method ? $o->method : 'post' ?>"
+            <?php echo isset( $o->action ) ? 'action="'.$o->action.'"' : '' ?>
             <?php echo isset( $o->enctype ) ? 'enctype="'.$o->enctype.'"' : '' ?>
             <?php echo isset( $o->autocomplete ) ? 'autocomplete="'.$o->autocomplete.'"' : '' ?>
         >

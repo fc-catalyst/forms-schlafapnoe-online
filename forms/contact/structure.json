@@ -4,8 +4,9 @@
         "print_method" : "server",
         "json_validate" : 1,
         "required_mark" : "*",
+        "reduce_font_after" : 50,
         "width" : "half",
-        "reduce_font_after" : 26
+        "action" : "#kontaktformular"
     },
     "fields" : [
         {
@@ -17,59 +18,120 @@
                     "fields" : [
                         {
                             "type" : "text",
-                            "title" : "Dein Name",
-                            "name" : "name",
+                            "title" : "Ihr Vorname",
+                            "placeholder" : "Max",
+                            "name" : "vorname",
                             "validate" : {
                                 "notEmpty" : true
                             }
                         },
                         {
                             "type" : "text",
-                            "title" : "Deine Emailadresse",
+                            "title" : "Ihr Nachname",
+                            "placeholder" : "Mustermann",
+                            "name" : "nachname",
+                            "validate" : {
+                                "notEmpty" : true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "gtype" : "row",
+                    "cols" : 2,
+                    "fields" : [
+                        {
+                            "type" : "text",
+                            "title" : "Ihre E-Mail",
+                            "placeholder" : "mustermann@email.com",
                             "name" : "email",
                             "validate" : {
                                 "notEmpty" : true,
                                 "email" : true
+                            }
+                        },
+                        {
+                            "type" : "text",
+                            "title" : "Ihre Telefonnummer",
+                            "placeholder" : "+49 111 222 333",
+                            "name" : "telefon",
+                            "validate" : {
+                                "regExp" : [
+                                    "^[0\\+][\\d \\(\\)\\-]+\\d$"
+                                ],
+                                "maxLetters" : 20,
+                                "minLetters" : 4
+                            }
+                        }
+                    ]
+                },
+                {
+                    "gtype" : "row",
+                    "cols" : 2,
+                    "fields" : [
+                        {
+                            "type" : "text",
+                            "title" : "Ihre Anschrift",
+                            "placeholder" : "Musterstraße 1",
+                            "name" : "anschrift",
+                            "validate" : {
+                                "notEmpty" : true
+                            }
+                        },
+                        {
+                            "type" : "text",
+                            "title" : "Ihr Wohnort",
+                            "placeholder" : "Musterstadt",
+                            "name" : "wohnort",
+                            "validate" : {
+                                "notEmpty" : true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "gtype" : "row",
+                    "cols" : 2,
+                    "fields" : [
+                        {
+                            "type" : "text",
+                            "title" : "Ihr Bundesstaat",
+                            "placeholder" : "Bayern",
+                            "name" : "bundesstaat",
+                            "validate" : {
+                                "notEmpty" : true
+                            }
+                        },
+                        {
+                            "type" : "text",
+                            "title" : "Ihre Postleitzahl",
+                            "placeholder" : "12345",
+                            "name" : "postleitzahl",
+                            "validate" : {
+                                "notEmpty" : true
                             }
                         }
                     ]
                 },
                 {
                     "type" : "textarea",
-                    "title" : "Nachricht an uns",
-                    "name" : "message",
+                    "title" : "Ihre Nachricht an unser Expertenteam",
+                    "placeholder" : "Mein Name ist Max Musterann und ich bin auf der Suche nach einer Lösung, die sich auf Schlafapnoe spezialisiert hat. Ich habe in den letzten Monaten bemerkt, dass ich während des Schlafes immer wieder Atemaussetzer habe und dadurch nicht erholsam schlafen kann. Nachdem ich im Internet Ihre Webseite schlafapnoe-online.de gefunden habe und gelesen habe, dass Sie auf dem Gebiet der Schlafmedizin erfahren sind sind, würde ich gerne weitere Informationen zu den verschiedenen Schlafapnoe-Lösungen einholen.",
+                    "name" : "nachricht",
                     "rows" : 8,
                     "validate" : {
                         "notEmpty" : true
                     }
                 },
                 {
-                    "type" : "rscaptcha",
-                    "name" : "captcha",
-                    "placeholder" : "Sicherheitsfrage",
-                    "before" : "<div class=\"rscaptcha\">",
-                    "after" : "</div>",
-                    "prefs" : {
-                        "chars" : "abcdefghijkmnopqrstuvwxyz2345789",
-                        "char_length" : 4,
-                        "img_size" : [170, 40],
-                        "bg_x" : [62, 145, 161],
-                        "bg" : [75, 158, 174],
-                        "fg" : [255, 255, 255],
-                        "fonts" : [
-                            "jost-v13-latin-300.ttf",
-                            "jost-v13-latin-500italic.ttf",
-                            "jost-v13-latin-800.ttf"
-                        ],
-                        "font_size_vars" : [16, 17, 18, 19],
-                        "font_char_width_vars" : [15, 19, 26, 30],
-                        "base_vars" : [ [7, 18], [28, 28], [50, 35], [51, 16], [7, 32] ],
-                        "cleanup_minutes" : 15
+                    "type" : "checkbox",
+                    "name" : "datenschutz",
+                    "options" : {
+                        "Datenschutzhinweise bestätigt" : "Ich habe die Hinweise zum Datenschutz gelesen und stimme der Verarbeitung meiner Daten zu. <a href=\"/datenschutz/\">Siehe Datenschutzerklärung.</a>"
                     },
                     "validate" : {
-                        "rscaptcha" : "captcha"
-                    },
-                    "async" : "hard"
+                        "notEmpty" : true
+                    }
                 }
             ]
         },

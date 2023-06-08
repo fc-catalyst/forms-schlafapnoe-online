@@ -14,5 +14,5 @@ if ( isset( $_GET['success'] ) ) {
 
 if ( isset( $_GET['fail'] ) ) {
     $override  = '<h2 style="text-align:center">' . __( 'An error appeared, the message is not sent.', 'fcpfo' ) . '</h2>';
-    $override .= '<p style="text-align:center">' . sprintf( __( 'Please contact directly by %s', 'fcpfo' ), 'kontakt@klinikerfahrungen.de' ) . '</p>';
+    $override .= '<p style="text-align:center">' . __( 'Please try again later', 'fcpfo' ) . '</p>';
 }

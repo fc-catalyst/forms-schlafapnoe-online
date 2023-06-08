@@ -18,7 +18,7 @@ defined( 'ABSPATH' ) || exit;
 
 class FCP_Forms {
 
-	public static $dev = false,
+	public static $dev = true,
                   $tmp_dir = 'fcp-forms-tmps',
                   $text_domain = 'fcpfo', // ++ delete or use
                   $prefix = 'fcpf',
@@ -353,10 +353,14 @@ class FCP_Forms {
         }
 
         if ( isset( $redirect ) ) {
+            nocache_headers();
             wp_redirect( $redirect );
+            //header( "X-Redirect-By: WordPress" );
+            //header( "Location: $redirect", true, 302 );
             exit;
         }
 
+        nocache_headers();
         wp_redirect( $_POST['_wp_http_referer'] ? $_POST['_wp_http_referer'] : get_permalink() );
         exit;
 
