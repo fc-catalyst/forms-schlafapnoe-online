@@ -1,0 +1,88 @@
+/* LAYOUT */
+.fcp-form-group-hidden {
+    position:fixed;
+    left:0;
+    top:0;
+    right:0;
+    bottom:0;
+    background-color:#fff;
+    overflow:auto;
+    padding:40px max( calc( ( 100% - 800px ) / 2 ), 15px ) 80px;
+}
+
+.fcp-form-group-hidden {
+    opacity:0;
+    z-index:-1;
+    pointer-events:none;
+}
+.fcp-form-group-hidden.fcp-active {
+    opacity:1;
+    z-index:100;
+    pointer-events:auto;
+}
+/* hidden wp-admin overrides */
+.wp-admin .fcp-form-group-hidden {
+    position:static;
+    background-color:transparent;
+    overflow:visible;
+    padding:0;
+    opacity:1;
+    z-index:1;
+    pointer-events:auto;
+}
+.wp-admin .fcp-form-group-hidden > * {
+    max-width:none;
+    margin-left:0;
+    margin-right:0;
+}
+
+/* hidden buttons */
+.fcp-form-group-hidden .fcp-section--close {
+    width:50px;
+    height:50px;
+    position:fixed;
+    bottom:10px;
+}
+.fcp-form-group-hidden .fcp-section--apply {
+    left:calc( 50% + 7px );
+}
+.fcp-form-group-hidden .fcp-section--discard {
+    right:calc( 50% + 7px );
+}
+
+
+/* STYLING */
+.fcp-form-group-hidden {
+    background-color:var(--hidden-bg);
+}
+.fcp-form-group-hidden p, li, a {
+    color:var(--hidden-color);
+}
+
+.fcp-form-group-hidden .fcp-section--close {
+    width:60px;
+    height:60px;
+    border-radius:30px;
+    background-color:#0b4562;
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size:40%;
+}
+.fcp-form-group-hidden .fcp-section--close::before {
+    content:none;
+}
+.fcp-form-group-hidden .fcp-section--close:hover {
+    opacity:0.8;
+}
+.fcp-form-group-hidden .fcp-section--apply {
+    background-image:var(--apply);
+}
+.fcp-form-group-hidden .fcp-section--discard {
+    background-image:var(--discard);
+}
+
+/* gmap */
+.fct1-gmap-pick {
+    min-height:50vh;
+    height:400px;
+}

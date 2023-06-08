@@ -1,0 +1,102 @@
+{
+    "options" : {
+        "method" : "post",
+        "print_method" : "server",
+        "enctype" : "multipart/form-data",
+        "json_validate" : 1,
+        "required_mark" : "*",
+        "width" : "half",
+        "tab" : "Rechnungsmethode hinzufügen",
+        "reduce_font_after" : 26
+    },
+    "fields" : [
+        {
+            "gtype" : "section",
+            "title" : "Rechnungsdaten hinterlegen",
+            "title_tag" : "h3",
+            "fields" : [
+                {
+                    "gtype" : "row",
+                    "fields" : [
+                        {
+                            "type" : "text",
+                            "title" : "Der Name des Unternehmens auf den die Rechnung ausgestellt werden soll",
+                            "name" : "billing-company",
+                            "validate" : {
+                                "notEmpty" : true
+                            },
+                            "meta_box" : "true"
+                        },
+                        {
+                            "type" : "text",
+                            "title" : "Rechnungsadresse",
+                            "name" : "billing-address",
+                            "validate" : {
+                                "notEmpty" : true
+                            },
+                            "meta_box" : true
+                        },
+                        {
+                            "type" : "hidden",
+                            "name" : "billing-region",
+                            "meta_box" : true
+                        },
+                        {
+                            "type" : "hidden",
+                            "name" : "billing-city",
+                            "meta_box" : true
+                        },
+                        {
+                            "type" : "hidden",
+                            "name" : "billing-postcode",
+                            "meta_box" : true
+                        }
+                    ]
+                },
+                {
+                    "gtype" : "row",
+                    "cols" : 2,
+                    "fields" : [
+                        {
+                            "type" : "text",
+                            "title" : "Person name",
+                            "name" : "billing-name",
+                            "validate" : {
+                                "notEmpty" : true
+                            },
+                            "meta_box" : "true"
+                        },
+                        {
+                            "type" : "text",
+                            "title" : "Emailadresse für Rechnung",
+                            "name" : "billing-email",
+                            "validate" : {
+                                "notEmpty" : true,
+                                "email" : true
+                            },
+                            "meta_box" : true
+                        }
+                    ]
+                },
+                {
+                    "type" : "text",
+                    "title" : "Umsatzsteuernummer VAT ID (optional)",
+                    "name" : "billing-vat",
+                    "meta_box" : true,
+                    "after" : "<style>#billing-vat_billing-add { text-transform:uppercase }</style>",
+                    "validate" : {
+                        "regExp" : [
+                            "^[\\d\\w ]+$",
+                            "Letters, numbers and spaces are allowed"
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "type" : "submit",
+            "name" : "billing-submit",
+            "value" : "Zur Überprüfung einreichen"
+        }
+    ]
+}

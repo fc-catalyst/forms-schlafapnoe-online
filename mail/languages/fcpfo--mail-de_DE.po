@@ -1,0 +1,134 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Dominik Stein\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: de_DE\n"
+
+#. common
+
+msgid "View"
+msgstr "Anschauen"
+
+msgid "Edit"
+msgstr "Bearbeiten"
+
+msgid "View the listing"
+msgstr "Eintrag ansehen"
+
+msgid "Edit the listing"
+msgstr "Unternehmen bearbeiten"
+
+msgid "Prolong"
+msgstr "Verlängern"
+
+msgid "Legal Notice"
+msgstr "Impressum"
+
+msgid "Privacy Policy"
+msgstr "Datenschutzerklärung"
+
+#. emails to the accountant
+
+msgid "Paid tariff request"
+msgstr "Anfrage kostenpflichtiger Eintrag"
+
+msgid "A paid tariff is requested. Please, bill the client and mark the status as \"Billed\". When the bill is payed, please remember to mark the status as \"Payed\" to activate the Tariff."
+msgstr "Ein kostenpflichtiger Eintrag wurde gemeldet. Bitte eine Rechnung an den Kunden ausstellen und im WordPress Backend als \"In Rechnung gestellt\" markieren. Nach Zahlungseingang, den Eintrag auf \"Bezahlt\" umstellen um den Eintragszeitraum zu starten."
+
+msgid "Prolongation request"
+msgstr "Anfrage Verlängerung des Eintrages"
+
+msgid "A Tariff prolongation is requested. Please bill the client and mark the prolongation status as \"Billed\". When the bill is payed, please remember to mark the status as \"Payed\" to schedule or activate the Tariff."
+msgstr "Ein kostenpflichtiger Tarif soll verlängert werden. Bitte eine Rechnung an den Kunden ausstellen und den Status im WordPress Backend als \"In Rechnung gestellt\" markieren. Nach Zahlungseingang, den Eintrag auf \"Bezahlt\" umstellen um den Eintragszeitraum zu starten."
+
+msgid "Tariff Change request"
+msgstr "Anfrage Tarifänderung"
+
+msgid "A Tariff change is requested in terms of prolongation. Please bill the client and mark the entity prolongation status as \"Billed\". When the bill is payed, please remember to mark the status as \"Payed\" to schedule or activate the Tariff."
+msgstr "Ein Kunde hat eine Änderung seines Tarifes (Verlängerung) beantragt. Bitte übersende dem Kunden eine Rechnung und setze den Status des Eintrages auf \"In Rechnung gestellt\". Nach Zahlungseingang, den Eintrag auf \"Bezahlt\" umstellen um den Eintragszeitraum zu starten."
+
+msgid "Bill not payed"
+msgstr "Rechnung noch unbezahlt"
+
+msgid "The client has not payed the Bill in a set up period of time. You can now cancel the Bill, or contact the client directly."
+msgstr "Der Kunde hat die Rechnung nicht rechtzeitig bezahlt. Du kannst die Rechnung stornieren oder den Kunden erneut erinnern."
+
+msgid "For %s; From %s, %s."
+msgstr "Für %s; Von %s, %s."
+
+#. emails to a client
+
+msgid "Hey"
+msgstr "Hallo"
+
+msgid "If you need assistence, please contact our team at: %s."
+msgstr "Benötigen Sie weitere Hilfe, dann kontaktieren Sie unser Team bitte unter: %s."
+
+msgid "Greetings from Berlin,\n"
+"Team %s"
+msgstr "Mit lieben Grüßen aus Berlin,\n"
+"das Team von %s"
+
+msgid "Your entry is published"
+msgstr "Dein Eintrag ist veröffentlicht."
+
+msgid "Your entry has just been published."
+msgstr "Dein Eintrag wurde soeben veröffentlicht."
+
+msgid "New tariff is activated"
+msgstr "Neuer Tarif ist aktiviert."
+
+msgid "Your new tariff is activated."
+msgstr "Dein neuer Tarif ist in Kraft getreten."
+
+msgid "Your tariff is prolonged"
+msgstr "Dein Eintrag ist verlängert."
+
+msgid "Your tariff is prolonged successfully."
+msgstr "Dein Eintrag wurde erfolgreich verlängert."
+
+msgid "Your Listing is expiring"
+msgstr "Ihr Eintrag läuft bald ab"
+
+msgid "Important: your listing on klinikerfahrungen.de will expire in %expire_days days"
+msgstr "Wichtig: Ihr Unternehmseintrag auf klinikerfahrungen.de läuft in %expire_days Tagen ab"
+
+msgid "you Premium-Listing on our plattform will expire in %expire_days days: %listing_link. If no action is taken, your premium entry will be automatically changed into a standard entry. This means your company description will be reduced to a maximum of 450 words and you will loose your valueable DoFollow Link.\n"
+"\n"
+"Keeping your premium features only costs you 29€/year. In order to keep your premium listing, you need to extend the membership in your profile: %listing_edit_link.\n"
+"\n"
+"In this tutorial we show you how to renew your listing: %tutorial_link"
+msgstr "Ihr Premium-Eintrag auf unserer Plattform wird in %expire_days Tagen auslaufen: %listing_link. Wenn Sie Ihre Premium-Mitgliedschaft nicht verlängern, wird Ihr Eintrag automatisch in einen Standardeintrag umgewandelt. Das bedeutet sie verlieren all Ihre Premium-Vorteile. Sie verlieren Ihren wertvollen DoFollow Link und Ihre Unternehmensbeschreibung wird auf 450 Wörter gekürzt.\n"
+"\n"
+"Es kostet Sie nur 29€ im Jahr, Ihren Premiumstatus zu behalten! Ihren Premium-Eintrag können Sie in Ihrem Klinikerfahrungen-Profil verlängern: %listing_edit_link.\n"
+"\n"
+"In diesem Tutorial zeigen wir Ihnen, wie Sie Ihren Unternehmenseintrag verlängern: %tutorial_link"
+
+msgid "How to renew your listing"
+msgstr "Wie verlängert man den Eintrag"
+
+msgid "Your tariff has just ended"
+msgstr "Dein Eintrag ist abgelaufen"
+
+msgid "Free Tariff is activated. Your links are no longer available for indexing by Search Engines, and other clinics will be advertised at the bottom of your page. You can choose a paid tariff in your Klinikerfahrungen account."
+msgstr "In kostenlosen Eintrag umgewandelt. Links in deinem Eintrag sind nicht länger indexierbar für Suchmaschinen und Eintragungen anderer Kunden erscheinen am Ende deines Profils. Möchtest du das nicht, kannst du jederzeit einen Premiumeintrag in deinem Klinikerfahrungen Account beantragen."
+
+#. emails to a moderator
+
+msgid "Clinic / doctor added"
+msgstr "Klinik / Arzt hinzugefügt"
+
+msgid "A new clinic or doctor has just been added. Please check it and publish, if it is valid."
+msgstr "Eine neue Klinik oder ein neuer Doktor wurde hinzugefügt. Bitte überprüfe den Eintrag und veröffentliche diesen, wenn die Eintragung fehlerfrei ist."
+
+msgid "Clinic / doctor changed"
+msgstr "Klinik / Arzt überarbeitet"
+
+msgid "A client has changed some information in an entry. Please check if it is still valid."
+msgstr "Ein Kunde hat seine Informationen im Eintrag überarbeitet. Bitte prüfe die Änderung auf Rechtmäßigkeit und ob diese unseren Regeln entspricht.

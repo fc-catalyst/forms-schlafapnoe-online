@@ -1,0 +1,234 @@
+.fcp-form {
+}
+
+/* GROUPS */
+.fcp-form-group {
+    box-sizing:border-box;
+}
+
+.fcp-form-group,
+.fcp-form fieldset {
+    display:flex;
+    justify-content:space-between;
+    align-items:stretch;
+    flex-wrap:wrap;
+}
+.fcp-form-group > *,
+.fcp-form fieldset:not(.fcp-form-cols-2,.fcp-form-cols-3) > * {
+    width:100%;
+}
+.fcp-form-cols-2 > * {
+    width:calc(50% - 15px);
+}
+.fcp-form-cols-3 > * {
+    width:calc(33.333% - 15px);
+}
+
+.fcp-form-group > .fcp-form-group-h {
+    width:100%!important; 
+    margin-bottom:15px;
+}
+.fcp-form-group-h > *:first-child {
+    margin-top:0;
+}
+.fcp-form-group-h > *:last-child {
+    margin-bottom:0;
+}
+
+/* common GTYPES */
+/* section */
+.fcp-form-group-section {
+    margin-bottom:30px;
+}
+/* row */
+.fcp-form-group-row {
+    margin-bottom:15px;
+}
+
+
+/* LAYOUTS */
+
+.fcp-form-field-w > span {
+    width:calc(40% - 15px);
+    margin-right:15px;
+}
+.fcp-form-field-w > span + * {
+    width:calc(60% - 15px);
+}
+@media (max-width:1199px) {
+    .fcp-form-cols-3 .fcp-form-field-w > * {
+        width:100%;
+        margin-right:0;
+    }
+}
+@media (max-width:991px) {
+    .fcp-form-cols-2 .fcp-form-field-w > * {
+        width:100%;
+        margin-right:0;
+    }
+}
+@media (max-width:639px) {
+    .fcp-form-group .fcp-form-field-w > * {
+        width:100%;
+        margin-right:0;
+    }
+    .fcp-form-cols-2 > *,
+    .fcp-form-cols-3 > * {
+        width:100%;
+    }
+}
+
+/* half */
+
+.fcp-form--half .fcp-form-field-w > * {
+    width:100%;
+    margin-right:0;
+}
+@media (max-width:1199px) {
+    .fcp-form--half .fcp-form-cols-3 > * {
+        width:100%;
+    }
+}
+@media (max-width:991px) {
+    .fcp-form--half .fcp-form-cols-2 > * {
+        width:100%;
+    }
+}
+
+/* sidebar */
+.fcp-form--sidebar .fcp-form-field-w > * {
+    width:100%;
+    margin-right:0;
+}
+.fcp-form--sidebar .fcp-form-group > * {
+    width:100%;
+}
+
+/* arounds */
+.fcp-form-field-w {
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    align-content:flex-start;
+    margin-bottom:0;
+    flex-wrap:wrap;
+}
+.fcp-form-field-w > * {
+    width:100%;
+    margin-bottom:12px;
+}
+.fcp-form-field-w > input[type=file] ~ fieldset { /* hotfix */
+    margin-top:-14px;
+}
+.fcp-form-field-w > input[type=file],
+.fcp-form-field-w > input[type=file] ~ fieldset { /* hotfix */
+    margin-bottom:24px;
+}
+
+.fcp-form-field-warn {
+    margin:0;
+    padding:0;
+}
+.fcp-form-field-warn > li {
+    list-style:none;
+    margin:0 0 8px;
+    padding:0;
+    line-height:1.3;
+    font-size:83%;
+}
+
+/* input file */
+.fcp-form fieldset {
+    margin-left:0;
+    padding:0;
+    border:none;
+}
+.fcp-form input[type=file].fcp-form-empty + label {
+    display:none;
+}
+.fcp-form input[type=file] + label + fieldset > label {
+    display:block;
+}
+
+.fcp-form input[type=file] + label + fieldset > label > input,
+.fcp-form input[type=file] + label + fieldset > label > input + span {
+    opacity:1;
+}
+.fcp-form input[type=file] + label + fieldset > label > input:not(:checked),
+.fcp-form input[type=file] + label + fieldset > label > input:not(:checked) + span {
+    opacity:0.2;
+}
+
+/* placeholder */
+
+.fcp-form input::-webkit-input-placeholder { transition:color 0.2s ease; }
+.fcp-form input::placeholder { transition:color 0.2s ease; }
+.fcp-form input:focus::-webkit-input-placeholder { color:transparent; }
+.fcp-form input:focus::placeholder { color:transparent; }
+
+
+/* pointer */
+
+.fcp-form select,
+.fcp-form button,
+.fcp-form input[type=submit],
+.fcp-form label {
+    cursor:pointer;
+}
+
+/* wysiwyg tinymce */
+.wp-editor-container textarea {
+    width:100%;
+}
+/* hide the links options button ++move to some custom */
+.wp-link-input ~ .mce-widget.mce-btn.mce-last {
+    display:none;
+}
+
+/* forms, divided by tabs */
+input[id^=fcp-forms--tab-] {
+    position:absolute;
+    z-index:-1;
+    opacity:0;
+}
+.fcp-forms--tabs {
+    margin-bottom:10px;
+}
+.fcp-forms--tabs label {
+    display:inline-block;
+    border:1px solid transparent;
+    border-bottom:1px solid #ccc;
+    border-radius:4px 4px 0 0;
+    margin-top:-1px;
+    margin-right:-1px;
+    padding:4px 12px;
+    cursor:pointer;
+}
+.fcp-forms--forms > * {
+    display:none;
+}
+
+.fcp-forms--tabbed input[id^=fcp-forms--tab-]:nth-child(1):checked ~ .fcp-forms--tabs > label:nth-child(1),
+.fcp-forms--tabbed input[id^=fcp-forms--tab-]:nth-child(2):checked ~ .fcp-forms--tabs > label:nth-child(2),
+.fcp-forms--tabbed input[id^=fcp-forms--tab-]:nth-child(3):checked ~ .fcp-forms--tabs > label:nth-child(3),
+.fcp-forms--tabbed input[id^=fcp-forms--tab-]:nth-child(4):checked ~ .fcp-forms--tabs > label:nth-child(4),
+.fcp-forms--tabbed input[id^=fcp-forms--tab-]:nth-child(5):checked ~ .fcp-forms--tabs > label:nth-child(5),
+.fcp-forms--tabbed input[id^=fcp-forms--tab-]:nth-child(6):checked ~ .fcp-forms--tabs > label:nth-child(6) {
+    border:1px solid #ccc;
+    border-bottom:1px solid transparent;
+}
+
+.fcp-forms--tabbed input[id^=fcp-forms--tab-]:nth-child(1):checked ~ .fcp-forms--forms > *:nth-child(1),
+.fcp-forms--tabbed input[id^=fcp-forms--tab-]:nth-child(2):checked ~ .fcp-forms--forms > *:nth-child(2),
+.fcp-forms--tabbed input[id^=fcp-forms--tab-]:nth-child(3):checked ~ .fcp-forms--forms > *:nth-child(3),
+.fcp-forms--tabbed input[id^=fcp-forms--tab-]:nth-child(4):checked ~ .fcp-forms--forms > *:nth-child(4),
+.fcp-forms--tabbed input[id^=fcp-forms--tab-]:nth-child(5):checked ~ .fcp-forms--forms > *:nth-child(5),
+.fcp-forms--tabbed input[id^=fcp-forms--tab-]:nth-child(6):checked ~ .fcp-forms--forms > *:nth-child(6) {
+    display:block;
+}
+
+/* really simple captcha */
+.rscaptcha {
+    display:flex;
+    flex-wrap:wrap;
+}

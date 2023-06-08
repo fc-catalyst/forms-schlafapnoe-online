@@ -1,0 +1,92 @@
+/* engine */
+.fct1-vg-up,
+.fct1-vg-down {
+    position:absolute;
+    z-index:-1;
+    pointer-events:none;
+}
+@media (min-width:600px) {
+    .fct1-vg-wrap {
+        position:relative;
+        overflow:hidden; /* bottom border */
+    }
+    .fct1-vg {
+        position:absolute;
+        max-width:100%;
+        overflow:hidden; /* top border */
+    }
+
+    .fct1-vg-up,
+    .fct1-vg-down {
+        z-index:2;
+        pointer-events:auto;
+        left:calc( 50% - var(--size) / 2 );
+        width:var(--size);
+        height:var(--size);
+        cursor:pointer;
+    }
+    .fct1-vg-up {
+        margin-top:10px;
+    }
+    .fct1-vg-down {
+        bottom:10px;
+    }
+}
+    
+/* styling */
+.fct1-vg-up,
+.fct1-vg-down {
+    --size:60px;
+    background-color:#ffffff66;
+    border-radius:50%;
+    box-shadow:2px 3px 11px -2px #00000055;
+    transition:background-color 0.2s ease;
+}
+
+.fct1-vg-up::before,
+.fct1-vg-up::after,
+.fct1-vg-down::before {
+    content:'';
+    position:absolute;
+    width:calc( var(--size) / 3 );
+    height:calc( var(--size) / 3 );
+    left:calc( var(--size) / 3 - 1px );
+    top:calc( var(--size) / 4 );
+    border:1px solid #000;
+    border-radius:2px;
+    border-width:0px 1px 1px 0px;
+    transform:rotate( 45deg );
+    transition:transform 0.3s ease;
+}
+.fct1-vg-up::before {
+    top:calc( var(--size) / 2 );
+}
+.fct1-vg-up::after {
+    top:calc( var(--size) / 3 );
+}
+.fct1-vg-up::before,
+.fct1-vg-up::after {
+    transform:rotate( -135deg );
+}
+
+/* effects */
+.fct1-vg-wrap:hover .fct1-vg-up,
+.fct1-vg-wrap:hover .fct1-vg-down {
+    background-color:#ffffffaa;
+}
+.fct1-vg-wrap .fct1-vg-up:hover,
+.fct1-vg-wrap .fct1-vg-down:hover {
+    background-color:#ffffffff;
+}
+
+.fct1-vg > * { transition:transform 0.3s ease }
+.fct1-vg > *:nth-child(1) { transition-delay:0.30s }
+.fct1-vg > *:nth-child(2) { transition-delay:0.27s }
+.fct1-vg > *:nth-child(3) { transition-delay:0.24s }
+.fct1-vg > *:nth-child(4) { transition-delay:0.21s }
+.fct1-vg > *:nth-child(5) { transition-delay:0.18s }
+.fct1-vg > *:nth-child(6) { transition-delay:0.15s }
+.fct1-vg > *:nth-child(7) { transition-delay:0.12s }
+.fct1-vg > *:nth-child(8) { transition-delay:0.09s }
+.fct1-vg > *:nth-child(9) { transition-delay:0.06s }
+.fct1-vg > *:nth-child(10) { transition-delay:0.03s }

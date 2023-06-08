@@ -1,0 +1,134 @@
+{
+    "options" : {
+        "method" : "post",
+        "autocomplete" : "off",
+        "print_method" : "server",
+        "json_validate" : 1,
+        "required_mark" : "*",
+        "reduce_font_after" : 36,
+        "width" : "half",
+        "tab" : "Registrieren"
+    },
+    "fields" : [
+        {
+            "gtype" : "section",
+            "title" : "Eine Klinik oder einen Arzt registrieren",
+            "title_tag" : "h2",
+            "fields" : [
+                {
+                    "gtype" : "row",
+                    "fields" : [
+                        {
+                            "type" : "text",
+                            "placeholder" : "Ihre Emailadresse",
+                            "name" : "user-email",
+                            "validate" : {
+                                "notEmpty" : true,
+                                "email" : true
+                            },
+                            "autocomplete" : "nope1"
+                        }
+                    ]
+                },
+                {
+                    "gtype" : "row",
+                    "cols" : 2,
+                    "fields" : [
+                        {
+                            "type" : "password",
+                            "placeholder" : "Passwort festlegen",
+                            "name" : "user-password",
+                            "validate" : {
+                                "notEmpty" : true,
+                                "password" : true
+                            },
+                            "autocomplete" : "nope2"
+                        },
+                        {
+                            "type" : "password",
+                            "placeholder" : "Passwort wiederholen",
+                            "name" : "user-password-repeat",
+                            "validate" : {
+                                "notEmpty" : true,
+                                "equals" : "user-password"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type" : "rscaptcha",
+                    "name" : "captcha",
+                    "placeholder" : "Sicherheitsfrage",
+                    "before" : "<div class=\"rscaptcha\">",
+                    "after" : "</div>",
+                    "prefs" : {
+                        "chars" : "abcdefghijkmnopqrstuvwxyz2345789",
+                        "char_length" : 4,
+                        "img_size" : [170, 40],
+                        "bg_x" : [62, 145, 161],
+                        "bg" : [75, 158, 174],
+                        "fg" : [255, 255, 255],
+                        "fonts" : [
+                            "jost-v13-latin-300.ttf",
+                            "jost-v13-latin-500italic.ttf",
+                            "jost-v13-latin-800.ttf"
+                        ],
+                        "font_size_vars" : [16, 17, 18, 19],
+                        "font_char_width_vars" : [15, 19, 26, 30],
+                        "base_vars" : [ [7, 18], [28, 28], [50, 35], [51, 16], [7, 32] ],
+                        "cleanup_minutes" : 15
+                    },
+                    "validate" : {
+                        "rscaptcha" : "captcha"
+                    },
+                    "async" : "hard"
+                },
+                {
+                    "gtype" : "row",
+                    "cols" : 2,
+                    "fields" : [
+                        {
+                            "type" : "checkbox",
+                            "name" : "user-datenschutzhinweise",
+                            "options" : {
+                                "Datenschutzhinweise bestätigt" : "Datenschutzhinweise gelesen"
+                            },
+                            "validate" : {
+                                "notEmpty" : true
+                            }
+                        },
+                        {
+                            "type" : "checkbox",
+                            "name" : "user-nutzungsbedingungen",
+                            "options" : {
+                                "Nutzungsbedingungen bestätigt" : "Nutzungsbedingungen akzeptiert"
+                            },
+                            "validate" : {
+                                "notEmpty" : true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type" : "checkbox",
+                    "name" : "user-agb",
+                    "options" : {
+                        "AGB bestätigt" : "AGB akzeptiert"
+                    },
+                    "validate" : {
+                        "notEmpty" : true
+                    }
+                },
+                {
+                    "type" : "notice",
+                    "text" : "<small><a href=\"/datenschutzerklarung/\" target=\"_blank\">Datenschutzerklärung</a> | <a href=\"/agb/\" target=\"_blank\">Allgemeinen Geschäftsbedingungen</a> | <a href=\"/faq/\" target=\"_blank\">Nutzungsbedingungen</a></small>"
+                }
+            ]
+        },
+        {
+            "type" : "submit",
+            "name" : "user-submit",
+            "value" : "Registrieren"
+        }
+    ]
+}

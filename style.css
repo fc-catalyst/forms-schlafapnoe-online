@@ -1,0 +1,349 @@
+.fcp-form--main {
+    --bg:#b4e9f299;
+    --bg-a:#fff;
+    --color:#0b4562;
+    --color-a:#0b4562;
+    --color-empty:#fff;
+    --not-valid:#fda7a7;
+    --checkbox:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 17'%3E%3Cpath fill='none' stroke='%23000' stroke-width='4' d='M 1.26,5.8 6,13.6 C 7,8.5 9.9,4.9 14.7,1.3'/%3E%3C/svg%3E");
+    --apply:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 17'%3E%3Cpath fill='none' stroke='%234dd149' stroke-linecap='round' stroke-width='2.5' d='M 1.26,5.8 6,13.6 C 7,8.5 9.9,4.9 14.7,1.3'/%3E%3C/svg%3E");
+    --discard:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 17'%3E%3Cg fill='none' stroke='%23d14949' stroke-linecap='round' stroke-width='2.5'%3E%3Cpath d='M 2.6,15.7 C 5.8,10 9.4,5.8 14.35,1.3'/%3E%3Cpath d='M 14.7,14.3 C 9.5,10.7 5.5,6.7 1.3,1.5'/%3E%3C/g%3E%3C/svg%3E");
+    --hidden-bg:#398b9b;
+    --hidden-color:#fff;
+}
+
+/* layout */
+
+.fcp-form-group-row,
+.fcp-form-field-w {
+    margin-bottom:0;
+}
+.fcp-form-field-w > * {
+    margin-bottom:6px;
+}
+
+.fcp-form-field-w > span {
+    display:flex;
+    align-items:flex-end;
+    width:100%;
+    min-height:30px;
+    margin-bottom:7px;
+    font-size:14px;
+    font-weight:600;
+    text-transform:uppercase;
+}
+
+.fcp-form-field-w > span > small {
+    margin-left:1ch;
+}
+
+@media( min-width:992px ) {
+    .fcp-form--half .fcp-form-small {
+        font-size:65%!important;
+    }
+}
+@media( min-width:1400px ) {
+    .fcp-form--half .fcp-form-small {
+        font-size:80%!important;
+    }
+}
+
+
+/* fields */
+
+.fcp-form--main input,
+.fcp-form--main select,
+.fcp-form--main textarea,
+.fcp-form--main button,
+.fcp-form--main input[type=file] + label {
+    display:block;
+    box-sizing:border-box;
+    border:none;
+    border-radius:6px;
+    padding:10px;
+    background-color:var(--bg);
+    font-size:14px;
+    line-height:1.4;
+    color:var(--color);
+    -webkit-appearance:none;
+}
+.fcp-form--main option {
+    font-weight:400;
+    text-transform:none;
+    background-color:var(--bg-a);
+    color:var(--color-a);
+}
+
+.fcp-form--main input:focus,
+.fcp-form--main input:focus-visible,
+.fcp-form--main select:focus,
+.fcp-form--main select:focus-visible,
+.fcp-form--main button:focus,
+.fcp-form--main button:focus-visible,
+.fcp-form--main textarea:focus,
+.fcp-form--main textarea:focus-visible,
+.fcp-form--main input[type=file]:focus + label,
+.fcp-form--main input[type=file]:focus-visible + label {
+  outline:none;
+  background-color:var(--bg-a);
+  color:var(--color-a)!important;
+}
+
+.fcp-form--main input:-webkit-autofill,
+.fcp-form--main  input:-internal-autofill-selected {
+    background-color:var(--bg);
+    -webkit-box-shadow:0 0 0 50px var(--bg) inset;
+    color:var(--color);
+    -webkit-text-fill-color:var(--color);
+}
+.fcp-form--main input:-webkit-autofill:focus,
+.fcp-form--main  input:-internal-autofill-selected:focus {
+    background-color:var(--bg-a);
+    -webkit-box-shadow:0 0 0 50px var(--bg-a) inset;
+    color:var(--color-a)!important;
+}
+
+.fcp-form--main input::-webkit-input-placeholder { color:var(--color-empty); font-weight:600; text-transform:uppercase; }
+.fcp-form--main input::placeholder { color:var(--color-empty); font-weight:600; text-transform:uppercase; }
+
+.fcp-form--main input[list]::-webkit-calendar-picker-indicator {
+    opacity:0;
+}
+
+/* file */
+.fcp-form--main input[type=file] {
+    position:absolute;
+    z-index:-1;
+    opacity:0;
+    max-width:0;
+    max-height:0;
+    overflow:hidden;
+}
+.fcp-form--main input[type=file] + label {
+    display:block!important;
+}
+.fcp-form--main input[type=file] + label + fieldset > label > input {
+    opacity:0!important;
+}
+.fcp-form--main input[type=file] ~ fieldset { /* a layout hotfix override */
+    margin-top:0;
+    margin-bottom:0;
+}
+
+/* empty */
+.fcp-form--main select.fcp-form-empty,
+.fcp-form--main button.fcp-form-empty,
+.fcp-form--main input[type=file].fcp-form-empty + label {
+    color:var(--color-empty);
+    font-weight:600;
+    text-transform:uppercase;
+}
+
+/* button */
+.fcp-form--main button {
+    text-align:left;
+    min-height:39px; /* for small font size variant */
+}
+.fcp-form--main button::before {
+    content:'>';
+    display:inline-block;
+    margin-left:7px;
+    line-height:1;
+    float:right;
+    transform:scale(1, 1.8);
+    font-size:inherit;
+}
+.fcp-form--main .fct1-gmap-pick button::before, /* override the gmap & tinymce buttons from a popup */
+.fcp-form--main .wp-editor-wrap button::before {
+    content:none;
+}
+
+/* select */
+.fcp-form--main select.fcp-form-empty {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Ctext x='0' y='10' fill='%23fff' font-size='11' font-family='sans' font-weight='bold' style='transform:scale(1, 0.7)'%3EV%3C/text%3E%3C/svg%3E");
+}
+.fcp-form--main select,
+.fcp-form--main select:focus,
+.fcp-form--main select:focus-visible {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Ctext x='0' y='10' fill='%230b4562' font-size='11' font-family='sans' font-weight='bold' style='transform:scale(1, 0.7)'%3EV%3C/text%3E%3C/svg%3E");
+    background-repeat:no-repeat;
+    background-position:right 10px center;
+    background-size:10px 10px;
+}
+
+/* checkbox & radio */
+.fcp-form--main fieldset {
+    margin:6px 0 0;
+    padding:0 0 8px 0;
+    border-radius:6px;
+}
+
+.fcp-form--main fieldset label > input[type=checkbox],
+.fcp-form--main fieldset label > input[type=radio] {
+    position:absolute;
+    z-index:-1;
+    opacity:0;
+}
+
+.fcp-form--main fieldset label {
+    position:relative;
+    white-space:nowrap;
+}
+.fcp-form--main fieldset label > span {
+    display:inline-block;
+    margin:0 10px 0 0;
+    padding:0 0 0 25px;
+    font-size:14px;
+    font-weight:600;
+    text-transform:uppercase;
+}
+.fcp-form--main fieldset label > span::before {
+    content:'';
+    display:inline-block;
+    position:absolute;
+    left:0;
+    background-color:var(--bg-a);
+}
+.fcp-form--main fieldset label > input[type=checkbox] + span::before {
+    width:14px;
+    height:14px;
+    border-radius:2.5px;
+    top:4.5px;
+    border: 1px solid var(--bg);
+    box-sizing: border-box;
+}
+.fcp-form--main fieldset label > input[type=checkbox]:focus + span::before {
+    width:20px;
+    height:20px;
+    margin-left:-3px;
+    border-radius:5.5px;
+    top:1.5px;
+}
+.fcp-form--main fieldset label > input[type=radio] + span::before {
+    width:15px;
+    height:15px;
+    border-radius:7.5px;
+    top:3.5px;
+    border: 1px solid var(--bg);
+    box-sizing: border-box;
+}
+.fcp-form--main fieldset label > input[type=radio]:focus + span::before {
+    width:21px;
+    height:21px;
+    margin-left:-3px;
+    border-radius:10.5px;
+    top:0.5px;
+}
+
+.fcp-form--main fieldset label > span::after {
+    content:'';
+    display:inline-block;
+    position:absolute;
+    z-index:-1;
+    opacity:0;
+}
+.fcp-form--main fieldset label > input[type=checkbox] + span::after {
+    width:0;
+    height:18px;
+    left:1px;
+    top:1px;
+    background-color:var(--color-a);
+    mask-image:var(--apply);
+    -webkit-mask-image:var(--apply);
+    mask-repeat:no-repeat;
+    -webkit-mask-repeat:no-repeat;
+    mask-position:0 0;
+    -webkit-mask-position:0 0;
+    mask-size:16px 17px;
+    -webkit-mask-size:16px 17px;
+    transition:width 0.15s ease;
+}
+.fcp-form--main fieldset label > input[type=radio] + span::after {
+    width:11px;
+    height:11px;
+    border-radius:5.5px;
+    left:2px;
+    top:5.5px;
+    background-color:var(--color-a);
+    transform:scale(0, 0);
+    transition:transform 0.15s ease;
+}
+.fcp-form--main fieldset label > input[type=checkbox]:checked + span::after {
+    width:18px;
+    z-index:1;
+    opacity:1;
+}
+.fcp-form--main fieldset label > input[type=radio]:checked + span::after {
+    z-index:1;
+    opacity:1;
+    transform:scale(1, 1);
+}
+
+.fcp-form--main .fcp-f-invalid,
+.fcp-form--main input[type=file].fcp-f-invalid + label {
+    border-bottom:2px solid var(--not-valid);
+}
+
+.fcp-form-warning {
+    margin-bottom:10px;
+    color:var(--not-valid);
+}
+.fcp-form-field-warn > li {
+    color:var(--not-valid);
+}
+
+/* submit */
+.fcp-form--main input[type=submit] {
+    width:auto;
+    margin-left:auto;
+    padding:9px 16px;
+    background-color:transparent;
+    font-size:16px;
+    font-weight:600;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    color:inherit;
+}
+.fcp-form--main input[type=submit]:focus,
+.fcp-form--main input[type=submit]:hover {
+    background-color:var(--bg);
+}
+
+/* tinymce */
+.fcp-form--main .wp-editor-wrap button {
+    color:var(--color-a);
+    border-radius:5px 5px 0 0;
+}
+.fcp-form--main .wp-editor-wrap .wp-editor-container,
+.fcp-form--main .wp-editor-wrap .mce-toolbar .mce-btn-group .mce-btn.mce-listbox {
+    border:none;
+}
+.fcp-form--main .wp-editor-wrap .wp-editor-container {
+    border-radius:5px 0 5px 5px;
+    overflow:hidden;
+}
+.fcp-form--main .wp-editor-wrap .quicktags-toolbar:empty {
+    display:none;
+}
+.fcp-form--main .wp-editor-wrap .mce-toolbar .mce-btn-group {
+    margin-right:5px;
+    padding-left:6px;
+}
+.fcp-form--main .wp-editor-wrap textarea.wp-editor-area {
+    background-color:#fff;
+    border-radius:5px 0 5px 5px;
+}
+
+/* really simple captcha */
+.rscaptcha img {
+    border-radius:6px;
+}
+.rscaptcha span::before {
+    content:'<';
+    padding:0 10px;
+    line-height:2.2;
+    font-weight:600;
+}
+.rscaptcha .fcp-form-field-warn {
+    width:100%;
+}

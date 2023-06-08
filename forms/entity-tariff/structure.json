@@ -1,0 +1,129 @@
+{
+    "options" : {
+        "method" : "post",
+        "print_method" : "server",
+        "enctype" : "multipart/form-data",
+        "json_validate" : 1,
+        "required_mark" : "*",
+        "width" : "half",
+        "reduce_font_after" : 26,
+        "translation" : "fcpfo-et"
+    },
+    "fields" : [
+        {
+            "type" : "select",
+            "name" : "entity-tariff",
+            "options" : {
+                "premiumeintrag" : "Premiumeintrag",
+                "kostenloser_eintrag" : "Kostenloser Eintrag"
+            },
+            "value" : "kostenloser_eintrag",
+            "meta_box" : true,
+            "view" : {
+                "before" : "<p><em>",
+                "after" : "</em></p>"
+            }
+        },
+        {
+            "type" : "select",
+            "placeholder" : "The payment status",
+            "name" : "entity-payment-status",
+            "x_placeholder" : "None",
+            "options" : {
+                "pending" : "Pending",
+                "billed" : "Billed",
+                "payed" : "Payed"
+            },
+            "value" : "",
+            "meta_box" : true,
+            "roles_edit" : [
+                "administrator"
+            ]
+        },
+        {
+            "type" : "text",
+            "title" : "Active till",
+            "placeholder" : "dd.mm.yyyy",
+            "name" : "entity-tariff-till",
+            "meta_box" : true,
+            "autocomplete" : "off",
+            "roles_edit" : [
+                "administrator"
+            ],
+            "roles_view" : [
+                "entity_delegate"
+            ],
+            "view" : {
+                "before" : "<em>",
+                "after" : "</em>"
+            }
+        },
+        {
+            "type" : "select",
+            "title" : "Timezone",
+            "name" : "entity-timezone",
+            "options" : {},
+            "value" : "Europe/Berlin",
+            "meta_box" : true,
+            "roles_edit" : [
+                "administrator"
+            ]
+        },
+        {
+            "type" : "hidden",
+            "title" : "Timezone Offset",
+            "name" : "entity-timezone-bias",
+            "value" : "0",
+            "meta_box" : true,
+            "roles_edit" : [
+                "administrator"
+            ],
+            "Y_description" : "gotta invent the invisible fields to exist in structure, but not flush on save and manipulated only by back-end"
+        },
+        {
+            "type" : "checkbox",
+            "name" : "entity-old-agb",
+            "meta_box" : true,
+            "options" : {
+                "1" : "<strong style='color:orange'>Apply Old AGB</strong>"
+            },
+            "roles_edit" : [
+                "administrator"
+            ]
+        },
+        {
+            "type" : "checkbox",
+            "name" : "entity-ignore-content-filters",
+            "meta_box" : true,
+            "options" : {
+                "1" : "<strong style='color:magenta'>Ignore the content filters</strong>"
+            },
+            "roles_edit" : [
+                "administrator"
+            ]
+        },
+        {
+            "type" : "none",
+            "title" : "<strong>The next tariff</strong>",
+            "name" : "entity-tariff-next",
+            "options" : {},
+            "value" : "",
+            "meta_box" : true,
+            "view" : {
+                "before" : "<em>",
+                "after" : "</em>"
+            }
+        },
+        {
+            "type" : "none",
+            "placeholder" : "The payment status",
+            "name" : "entity-payment-status-next",
+            "x_placeholder" : "None",
+            "options" : {},
+            "meta_box" : true,
+            "roles_edit" : [
+                "administrator"
+            ]
+        }
+    ]
+}

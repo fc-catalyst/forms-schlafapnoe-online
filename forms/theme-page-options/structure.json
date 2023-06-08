@@ -1,0 +1,41 @@
+{
+    "options" : {
+        "method" : "post",
+        "print_method" : "server",
+        "required_mark" : "*"
+    },
+    "fields" : [
+        {
+            "type" : "checkbox",
+            "name" : "hide-h1",
+            "meta_box" : "only",
+            "options" : {
+                "1" : "Remove the H1 headline"
+            },
+            "roles_edit" : [
+                "administrator"
+            ]
+        },
+        {
+            "type" : "checkbox",
+            "name" : "hide-top-gap",
+            "meta_box" : "only",
+            "options" : {
+                "1" : "Remove top gap behind menu"
+            },
+            "roles_edit" : [
+                "administrator"
+            ]
+        },
+        {
+            "type" : "select",
+            "name" : "custom-header",
+            "meta_box" : "only",
+            "placeholder" : "Apply custom header",
+            "options" : {},
+            "roles_edit" : [
+                "administrator"
+            ]
+        }
+    ]
+}

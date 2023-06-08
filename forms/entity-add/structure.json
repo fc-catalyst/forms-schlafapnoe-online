@@ -1,0 +1,650 @@
+{
+    "options" : {
+        "method" : "post",
+        "print_method" : "server",
+        "enctype" : "multipart/form-data",
+        "json_validate" : 1,
+        "required_mark" : "*",
+        "width" : "half",
+        "reduce_font_after" : 26,
+        "hide_on_GET" : {
+            "add_billing" : true
+        }
+    },
+    "fields" : [
+        {
+            "gtype" : "section",
+            "x_title" : "Unternehmen",
+            "x_title_tag" : "h2",
+            "fields" : [
+                {
+                    "gtype" : "row",
+                    "fields" : [
+                        {
+                            "type" : "radio",
+                            "cols" : 2,
+                            "name" : "entity-entity",
+                            "options" : {
+                                "clinic" : "Eintrag für Klinik",
+                                "doctor" : "Eintrag für Arzt"
+                            },
+                            "validate" : {
+                                "notEmpty" : true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "gtype" : "row",
+                    "cols" : 2,
+                    "fields" : [
+                        {
+                            "type" : "text",
+                            "title" : "Name der Klinik / Praxis",
+                            "name" : "entity-name",
+                            "validate" : {
+                                "notEmpty" : true
+                            }
+                        },
+                        {
+                            "type" : "text",
+                            "title" : "Telefonnummer",
+                            "name" : "entity-phone",
+                            "validate" : {
+                                "regExp" : [
+                                    "^[0\\+][\\d \\(\\)\\-]+\\d$"
+                                ],
+                                "maxLetters" : 20,
+                                "minLetters" : 4
+                            },
+                            "meta_box" : true
+                        },
+                        {
+                            "type" : "checkbox",
+                            "name" : "entity-featured",
+                            "title" : "&nbsp;",
+                            "meta_box" : "only",
+                            "options" : {
+                                "1" : "Empfohlen"
+                            },
+                            "roles_edit" : [
+                                "administrator"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "gtype" : "row",
+                    "cols" : 2,
+                    "fields" : [
+                        {
+                            "type" : "text",
+                            "title" : "Emailadresse für Kontaktanfrage",
+                            "name" : "entity-email",
+                            "validate" : {
+                                "notEmpty" : true,
+                                "email" : true
+                            },
+                            "meta_box" : true
+                        },
+                        {
+                            "type" : "text",
+                            "title" : "Webseite des Unternehmens",
+                            "name" : "entity-website",
+                            "validate" : {
+                                "notEmpty" : true,
+                                "url" : true
+                            },
+                            "meta_box" : true
+                        }
+                    ]
+                },
+                {
+                    "gtype" : "row",
+                    "cols" : 2,
+                    "fields" : [
+                        {
+                            "type" : "text",
+                            "title" : "Unternehmensadresse",
+                            "name" : "entity-address",
+                            "autocomplete" : "nope1",
+                            "validate" : {
+                                "notEmpty" : true
+                            },
+                            "meta_box" : true
+                        },
+                        {
+                            "type" : "button",
+                            "title" : "&nbsp;",
+                            "value" : "In Google Maps auswählen",
+                            "name" : "entity-map"
+                        },
+                        {
+                            "type" : "select",
+                            "title" : "Branche",
+                            "name" : "entity-specialty",
+                            "options" : {
+                                "Allergologie" : "Allergologie",
+                                "Allgemeinmedizin" : "Allgemeinmedizin",
+                                "Anäthesisten" : "Anäthesisten",
+                                "Medizinische Dienstleister" : "Medizinische Dienstleister",
+                                "Augenärzte" : "Augenärzte",
+                                "Chirurgie" : "Chirurgie",
+                                "Haut- und Geschlechtskrankheiten" : "Haut- und Geschlechtskrankheiten",
+                                "Innere Medizin und Internisten" : "Innere Medizin und Internisten",
+                                "Innere Medizin und Internisten" : "Innere Medizin und Internisten",
+                                "Ergotherapie" : "Ergotherapie",
+                                "Frauenheilkunde" : "Frauenheilkunde",
+                                "Innere Medizin und Internisten" : "Innere Medizin und Internisten",
+                                "Frauenheilkunde" : "Frauenheilkunde",
+                                "Vereine und Heilberufe" : "Vereine und Heilberufe",
+                                "Vereine und Heilberufe" : "Vereine und Heilberufe",
+                                "HNO" : "HNO",
+                                "Medizinische Dienstleister" : "Medizinische Dienstleister",
+                                "Implantologen" : "Implantologen",
+                                "Innere Medizin und Internisten" : "Innere Medizin und Internisten",
+                                "Kardiologie" : "Kardiologie",
+                                "Kieferorthopädie" : "Kieferorthopädie",
+                                "Kinder und Jugend Medizin" : "Kinder und Jugend Medizin",
+                                "Zahnärzte" : "Zahnärzte",
+                                "Klinik und OP-Zentrum" : "Klinik und OP-Zentrum",
+                                "Labore" : "Labore",
+                                "Logopädie" : "Logopädie",
+                                "Mikrobiologie" : "Mikrobiologie",
+                                "Frauenheilkunde" : "Frauenheilkunde",
+                                "Innere Medizin und Internisten" : "Innere Medizin und Internisten",
+                                "Neurologie" : "Neurologie",
+                                "Medizinische Dienstleister" : "Medizinische Dienstleister",
+                                "Orthopädie und Sport Medizin" : "Orthopädie und Sport Medizin",
+                                "Osteopathie" : "Osteopathie",
+                                "Pathologie" : "Pathologie",
+                                "Physiotherapie " : "Physiotherapie ",
+                                "Plastische und Ästhetische Chirurgen" : "Plastische und Ästhetische Chirurgen",
+                                "Innere Medizin und Internisten" : "Innere Medizin und Internisten",
+                                "Podologie und medizinische Fußpflege" : "Podologie und medizinische Fußpflege",
+                                "Psychiatrie und Psychologen" : "Psychiatrie und Psychologen",
+                                "Radiologie" : "Radiologie",
+                                "Rheumatologie" : "Rheumatologie",
+                                "Vereine und Heilberufe" : "Vereine und Heilberufe",
+                                "Orthopädie und Sport Medizin" : "Orthopädie und Sport Medizin",
+                                "Strahlentherapie" : "Strahlentherapie",
+                                "Veterinärmedizin" : "Veterinärmedizin",
+                                "Urologie" : "Urologie",
+                                "Zahnärzte" : "Zahnärzte",
+                                "Hersteller Medizinprodukte" : "Hersteller Medizinprodukte",
+                                "Sonstige" : "Sonstige"
+                            },
+                            "order" : [
+                                "value",
+                                "ASC"
+                            ],
+                            "validate" : {
+                                "notEmpty" : true
+                            },
+                            "meta_box" : true
+                        },
+                        {
+                            "type" : "button",
+                            "title" : "&nbsp;",
+                            "value" : "Öffnungszeiten hinterlegen",
+                            "name" : "entity-working-hours",
+                            "validate" : {
+                                "unitedWarn" : [
+                                    "entity-mo-open",
+                                    "entity-mo-close",
+                                    "entity-tu-open",
+                                    "entity-tu-close",
+                                    "entity-we-open",
+                                    "entity-we-close",
+                                    "entity-th-open",
+                                    "entity-th-close",
+                                    "entity-fr-open",
+                                    "entity-fr-close",
+                                    "entity-sa-open",
+                                    "entity-sa-close",
+                                    "entity-su-open",
+                                    "entity-su-close"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "gtype" : "row",
+                    "cols" : 2,
+                    "fields" : [
+                        {
+                            "type" : "file",
+                            "title" : "Logo Ihrer Klinik oder des Arztes",
+                            "name" : "entity-avatar",
+                            "validate" : {
+                                "default" : true,
+                                "maxSize" : 1000000,
+                                "extension" : [
+                                    "jpg",
+                                    "jpeg",
+                                    "png",
+                                    "gif"
+                                ]
+                            },
+                            "meta_box" : true
+                        },
+                        {
+                            "type" : "file",
+                            "title" : "Foto Ihrer Klinik",
+                            "name" : "entity-photo",
+                            "validate" : {
+                                "default" : true,
+                                "maxSize" : 1000000,
+                                "extension" : [
+                                    "jpg",
+                                    "jpeg"
+                                ]
+                            },
+                            "meta_box" : "only"
+                        },
+                        {
+                            "type" : "file",
+                            "title" : "The header background",
+                            "name" : "entity-background",
+                            "validate" : {
+                                "default" : true,
+                                "maxSize" : 1000000,
+                                "extension" : [
+                                    "jpg",
+                                    "jpeg"
+                                ]
+                            },
+                            "meta_box" : "only"
+                        },
+                        {
+                            "type" : "notice",
+                            "text" : "<p><strong>Beachten Sie, dass Sie noch mehr Bilder in die <a href=\"#entity-gallery\">Galerie unten</a> hochladen können.</strong></p>",
+                            "meta_box" : "only"
+                        },
+                        {
+                            "type" : "text",
+                            "title" : "Tragen die Video-URL ein",
+                            "name" : "entity-video",
+                            "validate" : {
+                                "url" : true
+                            },
+                            "meta_box" : true
+                        },
+                        {
+                            "type" : "text",
+                            "name" : "entity-tags",
+                            "title" : "Angebotenen Behandlungen",
+                            "placeholder" : "Beispiel: Zahnarzt, Kieferorthopäde",
+                            "meta_box" : "only"
+                        }
+                    ]
+                },
+                {
+                    "gtype" : "row",
+                    "fields" : [
+                        {
+                            "type" : "radio",
+                            "cols" : 2,
+                            "x_title" : "Wählen Sie Ihren Tarif",
+                            "title" : "Ihr Tarif",
+                            "subtitle" : "(<a href=\"/preise-eintragung/\" target=\"_blank\">Kosten für einen Eintrag</a>)",
+                            "name" : "entity-tariff",
+                            "options" : {
+                                "premiumeintrag" : "Premiumeintrag",
+                                "kostenloser_eintrag" : "Kostenloser Eintrag"
+                            },
+                            "validate" : {
+                                "notEmpty" : true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type" : "textarea",
+                    "title" : "Beschreiben Sie Ihr Unternehmen",
+                    "subtitle" : "(mindestens 300 Buchstaben, maximal <span class=\"entity-content-words-limit\">450</span> Wörter)",
+                    "name" : "entity-content",
+                    "rows" : 8,
+                    "validate" : {
+                        "minLetters" : 300
+                    },
+                    "_comment" : "maximum words is not an input filter, but the printing one",
+                    "meta_box" : true,
+                    "tinymce" : true,
+                    "after" : "<p><span class=\"entity-content-words-count\">450</span> von <span class=\"entity-content-words-limit\">450</span> Wörtern verbleibend</p>"
+                }
+            ]
+        },
+        {
+            "type" : "submit",
+            "name" : "entity-submit",
+            "value" : "Weiter"
+        },
+        {
+            "gtype" : "hidden",
+            "title" : "Öffnungszeiten (optional)",
+            "title_tag" : "h3",
+            "id" : "entity-working-hours",
+            "x_description" : "<p>Keep empty if days are not work-days</p>",
+            "fields" : [
+                {
+                    "gtype" : "row",
+                    "cols" : 2,
+                    "fields" : [
+                        {
+                            "type" : "text",
+                            "name" : "entity-mo-open",
+                            "title" : "Montag",
+                            "placeholder" : "Geöffnet",
+                            "meta_box" : true,
+                            "multiple" : true,
+                            "autocomplete" : "off",
+                            "keep_empty" : true,
+                            "validate" : {
+                                "regExp" : [
+                                    "^\\d{1,2}:\\d{2}$",
+                                    "hh:mm oder h:mm"
+                                ]
+                            }
+                        },
+                        {
+                            "type" : "text",
+                            "name" : "entity-mo-close",
+                            "title" : "&nbsp;",
+                            "placeholder" : "Geschlossen",
+                            "meta_box" : true,
+                            "multiple" : true,
+                            "autocomplete" : "off",
+                            "keep_empty" : true,
+                            "validate" : {
+                                "regExp" : [
+                                    "^\\d{1,2}:\\d{2}$",
+                                    "hh:mm oder h:mm"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "gtype" : "row",
+                    "cols" : 2,
+                    "fields" : [
+                        {
+                            "type" : "text",
+                            "name" : "entity-tu-open",
+                            "title" : "Dienstag",
+                            "placeholder" : "Geöffnet",
+                            "meta_box" : true,
+                            "multiple" : true,
+                            "autocomplete" : "off",
+                            "keep_empty" : true,
+                            "validate" : {
+                                "regExp" : [
+                                    "^\\d{1,2}:\\d{2}$",
+                                    "hh:mm oder h:mm"
+                                ]
+                            }
+                        },
+                        {
+                            "type" : "text",
+                            "name" : "entity-tu-close",
+                            "title" : "&nbsp;",
+                            "placeholder" : "Geschlossen",
+                            "meta_box" : true,
+                            "multiple" : true,
+                            "autocomplete" : "off",
+                            "keep_empty" : true,
+                            "validate" : {
+                                "regExp" : [
+                                    "^\\d{1,2}:\\d{2}$",
+                                    "hh:mm oder h:mm"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "gtype" : "row",
+                    "cols" : 2,
+                    "fields" : [
+                        {
+                            "type" : "text",
+                            "name" : "entity-we-open",
+                            "title" : "Mittwoch",
+                            "placeholder" : "Geöffnet",
+                            "meta_box" : true,
+                            "multiple" : true,
+                            "autocomplete" : "off",
+                            "keep_empty" : true,
+                            "validate" : {
+                                "regExp" : [
+                                    "^\\d{1,2}:\\d{2}$",
+                                    "hh:mm oder h:mm"
+                                ]
+                            }
+                        },
+                        {
+                            "type" : "text",
+                            "name" : "entity-we-close",
+                            "title" : "&nbsp;",
+                            "placeholder" : "Geschlossen",
+                            "meta_box" : true,
+                            "multiple" : true,
+                            "autocomplete" : "off",
+                            "keep_empty" : true,
+                            "validate" : {
+                                "regExp" : [
+                                    "^\\d{1,2}:\\d{2}$",
+                                    "hh:mm oder h:mm"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "gtype" : "row",
+                    "cols" : 2,
+                    "fields" : [
+                        {
+                            "type" : "text",
+                            "name" : "entity-th-open",
+                            "title" : "Donnerstag",
+                            "placeholder" : "Geöffnet",
+                            "meta_box" : true,
+                            "multiple" : true,
+                            "autocomplete" : "off",
+                            "keep_empty" : true,
+                            "validate" : {
+                                "regExp" : [
+                                    "^\\d{1,2}:\\d{2}$",
+                                    "hh:mm oder h:mm"
+                                ]
+                            }
+                        },
+                        {
+                            "type" : "text",
+                            "name" : "entity-th-close",
+                            "title" : "&nbsp;",
+                            "placeholder" : "Geschlossen",
+                            "meta_box" : true,
+                            "multiple" : true,
+                            "autocomplete" : "off",
+                            "keep_empty" : true,
+                            "validate" : {
+                                "regExp" : [
+                                    "^\\d{1,2}:\\d{2}$",
+                                    "hh:mm oder h:mm"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "gtype" : "row",
+                    "cols" : 2,
+                    "fields" : [
+                        {
+                            "type" : "text",
+                            "name" : "entity-fr-open",
+                            "title" : "Freitag",
+                            "placeholder" : "Geöffnet",
+                            "meta_box" : true,
+                            "multiple" : true,
+                            "autocomplete" : "off",
+                            "keep_empty" : true,
+                            "validate" : {
+                                "regExp" : [
+                                    "^\\d{1,2}:\\d{2}$",
+                                    "hh:mm oder h:mm"
+                                ]
+                            }
+                        },
+                        {
+                            "type" : "text",
+                            "name" : "entity-fr-close",
+                            "title" : "&nbsp;",
+                            "placeholder" : "Geschlossen",
+                            "meta_box" : true,
+                            "multiple" : true,
+                            "autocomplete" : "off",
+                            "keep_empty" : true,
+                            "validate" : {
+                                "regExp" : [
+                                    "^\\d{1,2}:\\d{2}$",
+                                    "hh:mm oder h:mm"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "gtype" : "row",
+                    "cols" : 2,
+                    "fields" : [
+                        {
+                            "type" : "text",
+                            "name" : "entity-sa-open",
+                            "title" : "Samstag",
+                            "placeholder" : "Geöffnet",
+                            "meta_box" : true,
+                            "multiple" : true,
+                            "autocomplete" : "off",
+                            "keep_empty" : true,
+                            "validate" : {
+                                "regExp" : [
+                                    "^\\d{1,2}:\\d{2}$",
+                                    "hh:mm oder h:mm"
+                                ]
+                            }
+                        },
+                        {
+                            "type" : "text",
+                            "name" : "entity-sa-close",
+                            "title" : "&nbsp;",
+                            "placeholder" : "Geschlossen",
+                            "meta_box" : true,
+                            "multiple" : true,
+                            "autocomplete" : "off",
+                            "keep_empty" : true,
+                            "validate" : {
+                                "regExp" : [
+                                    "^\\d{1,2}:\\d{2}$",
+                                    "hh:mm oder h:mm"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "gtype" : "row",
+                    "cols" : 2,
+                    "fields" : [
+                        {
+                            "type" : "text",
+                            "name" : "entity-su-open",
+                            "title" : "Sonntag",
+                            "placeholder" : "Geöffnet",
+                            "meta_box" : true,
+                            "multiple" : true,
+                            "autocomplete" : "off",
+                            "keep_empty" : true,
+                            "validate" : {
+                                "regExp" : [
+                                    "^\\d{1,2}:\\d{2}$",
+                                    "hh:mm oder h:mm"
+                                ]
+                            }
+                        },
+                        {
+                            "type" : "text",
+                            "name" : "entity-su-close",
+                            "title" : "&nbsp;",
+                            "placeholder" : "Geschlossen",
+                            "meta_box" : true,
+                            "multiple" : true,
+                            "autocomplete" : "off",
+                            "keep_empty" : true,
+                            "validate" : {
+                                "regExp" : [
+                                    "^\\d{1,2}:\\d{2}$",
+                                    "hh:mm oder h:mm"
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "gtype" : "hidden",
+            "title" : "Standort auf Karte festlegen",
+            "title_tag" : "h3",
+            "id" : "entity-specify-map",
+            "description" : "<p>Alternativ kannst du den Eingang des Unternehmensstandorts, durch einen Marker (Pin) auf einer Google Maps Karte festlegen.<br/><br/>Um den Marker zu verändern, ziehe diesen zu einer beliebigen Position auf der Google Maps Karte. Hinweis: Der Wert des Zooms wird ebenfalls gespeichert.</p>",
+            "fields" : [
+                {
+                    "type" : "notice",
+                    "text" : "<div class=\"fct1-gmap-pick\"></div>",
+                    "meta_box" : true
+                },
+                {
+                    "type" : "hidden",
+                    "name" : "entity-region",
+                    "meta_box" : true
+                },
+                {
+                    "type" : "hidden",
+                    "name" : "entity-geo-city",
+                    "meta_box" : true
+                },
+                {
+                    "type" : "hidden",
+                    "name" : "entity-geo-postcode",
+                    "meta_box" : true
+                },
+                {
+                    "type" : "hidden",
+                    "name" : "entity-geo-lat",
+                    "meta_box" : true
+                },
+                {
+                    "type" : "hidden",
+                    "name" : "entity-geo-long",
+                    "meta_box" : true
+                },
+                {
+                    "type" : "hidden",
+                    "name" : "entity-geo-zoom",
+                    "meta_box" : true,
+                    "value" : 17
+                },
+                {
+                    "type" : "hidden",
+                    "name" : "entity-geo-street_number",
+                    "meta_box" : true
+                }
+            ]
+        }
+    ]
+}
