@@ -469,7 +469,14 @@ class FCP_Forms__Draw {
         
         $o = $this->s->options;
         
-        if ( $a->type == 'hidden' ) {
+        // dynamic values ++ to separate method
+        if ( isset( $a->value ) && substr( $a->value, 0, 1 ) === '%' ) {
+            if ( substr( $a->value, 1 ) === 'id' ) { // ++to array
+                $a->value = \get_queried_object_id();
+            }
+        }
+
+        if ( $a->type === 'hidden' ) {
             $this->{ $method }( $a );
             return;
         }

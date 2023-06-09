@@ -124,6 +124,14 @@
                     }
                 },
                 {
+                    "type" : "hidden",
+                    "name" : "source_id",
+                    "value" : "%id",
+                    "validate" : {
+                        "notEmpty" : true
+                    }
+                },
+                {
                     "type" : "checkbox",
                     "name" : "datenschutz",
                     "options" : {

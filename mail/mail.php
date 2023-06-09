@@ -551,6 +551,7 @@ In this tutorial we show you how to renew your listing: %tutorial_link',
             $result .= '<p><strong>'.$title.':</strong> '.$message[ $key ].'</p>';
             return $result;
         }, '' );
+        $message['message'] .= '<p>Referer: <a href="'.esc_attr( get_the_permalink( $message['source_id'] ) ).'">'.esc_html( get_the_title( $message['source_id'] ) ).'</a></p>';
 
         return self::send( $message );
     }
@@ -586,7 +587,7 @@ In this tutorial we show you how to renew your listing: %tutorial_link',
             $m['message'], // the content
             $m['footer'] ? $m['footer'] : self::details()['footer'] // footer
         ]);
-
+echo $email_body; exit;
         if ( is_array( $m['to'] ) && $m['to'][1] ) { list( $m['to'], $m['to2'] ) = $m['to']; }
 
         if ( !class_exists( '\PHPMailer\PHPMailer\PHPMailer', false ) ) { // not sure it is needed and works
