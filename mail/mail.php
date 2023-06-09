@@ -16,13 +16,13 @@ class FCP_FormsMail {
                 'sending_name' => get_bloginfo( 'name' ),
 
                 // ++add dynamic loading by role
-                'accountant' => 'buchhaltung@firmcatalyst.com',
+                'accountant' => 'vadim@firmcatalyst.com',
                 'accountant_name' => 'Accountant',
                 'accountant_locale' => 'de_DE',
-                'moderator' => 'buchhaltung@firmcatalyst.com',//'kontakt@klinikerfahrungen.de',
-                'moderator_name' => 'Moderator',
+                'moderator' => 'vadim@firmcatalyst.com',//'kontakt@klinikerfahrungen.de',
+                'moderator_name' => 'Donald Kressner',
                 'moderator_locale' => 'de_DE',
-                'admin' => 'developer@firmcatalyst.com', // technical purposes
+                'admin' => 'vadim@firmcatalyst.com', // technical purposes
                 'admin_name' => 'Admin', // technical purposes
                 'admin_locale' => 'en_US',
 
@@ -524,6 +524,36 @@ In this tutorial we show you how to renew your listing: %tutorial_link',
 
         return self::send( $message );
     }
+
+    public static function to_the_owner($message) {
+
+        $details = self::details();
+        $structure = self::get_structures( 'contact' );
+
+        $message['name'] = $message['vorname'].' '.$message['nachname'];
+
+        //++move the translation here?
+        $message['heading'] = $message['subject'] = sprintf( __( 'Schlafapnoe message from <br>%s', 'fcpfo' ),  $message['name'] );
+        $message['footer'] = $details['footer'];
+
+        $message['from'] = $details['sending'];
+        $message['from_name'] = $message['name'];
+        $message['to'] = $details['moderator']; // can be array
+        $message['to_name'] = $details['moderator_name'];
+        
+        $message['reply_to'] = $message['email'];
+        $message['reply_to_name'] = $message['name'];
+
+        $message['nachricht'] = wpautop( esc_html( stripslashes( $message['nachricht'] ) ) );
+
+        $message['message'] .= array_reduce( array_keys( $structure['titles'] ), function($result, $key) use ($structure, $message) {
+            $title = str_replace( ['Ihre ', 'Ihr '], '', $structure['titles'][ $key ] );
+            $result .= '<p><strong>'.$title.':</strong> '.$message[ $key ].'</p>';
+            return $result;
+        }, '' );
+
+        return self::send( $message );
+    }
     
     public static function send($m) {
 
@@ -577,7 +607,7 @@ In this tutorial we show you how to renew your listing: %tutorial_link',
         //$mail->msgHTML( $email_body );
         $mail->Body = $email_body;
         //$mail->AltBody = '';
-        $mail->AddEmbeddedImage( __DIR__ . '/attachments/klinikerfahrungen-logo.png', 'klinikerfahrungen-logo');
+        $mail->AddEmbeddedImage( __DIR__ . '/attachments/logo.png', 'logo');
         // $mail->addAttachment( __DIR__ . '/attachments/Fünf Tipps.pdf' );
 
         // a small debug

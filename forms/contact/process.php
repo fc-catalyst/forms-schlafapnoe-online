@@ -9,7 +9,7 @@ if ( $warning || !empty( $warns->result ) ) { return; }
 
 require_once __DIR__ . '/../../mail/mail.php';
 
-if ( FCP_FormsMail::to_moderator_custom( $_POST ) ) {
+if ( FCP_FormsMail::to_the_owner( $_POST ) ) {
     $redirect = add_query_arg( 'success', '', get_permalink( get_queried_object() ) ) . '#kontaktformular';
     return;
 }

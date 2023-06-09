@@ -103,8 +103,8 @@
     color:var(--color-a)!important;
 }
 
-.fcp-form--main input::-webkit-input-placeholder { color:var(--color-empty); font-weight:600; text-transform:uppercase; }
-.fcp-form--main input::placeholder { color:var(--color-empty); font-weight:600; text-transform:uppercase; }
+.fcp-form--main input::-webkit-input-placeholder { color:var(--color-empty); font-weight:400; }
+.fcp-form--main input::placeholder { color:var(--color-empty); font-weight:400; }
 
 .fcp-form--main input[list]::-webkit-calendar-picker-indicator {
     opacity:0;

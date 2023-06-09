@@ -78,7 +78,7 @@ class FCP_Forms {
             if ( is_home() || is_archive() ) { return; }
             
             global $post;
-            if ( !$post->post_content || strpos( $post->post_content, '[fcp-form' ) === false ) { return; }
+            if ( !isset( $post->post_content ) || strpos( $post->post_content, '[fcp-form' ) === false ) { return; }
             
             preg_match_all(
                 '/\[fcp\-form(?:s\-tabs)?(\s+[^\]]+)\]/i',
