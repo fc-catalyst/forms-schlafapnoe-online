@@ -587,7 +587,7 @@ In this tutorial we show you how to renew your listing: %tutorial_link',
             $m['message'], // the content
             $m['footer'] ? $m['footer'] : self::details()['footer'] // footer
         ]);
-echo $email_body; exit;
+
         if ( is_array( $m['to'] ) && $m['to'][1] ) { list( $m['to'], $m['to2'] ) = $m['to']; }
 
         if ( !class_exists( '\PHPMailer\PHPMailer\PHPMailer', false ) ) { // not sure it is needed and works

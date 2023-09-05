@@ -250,6 +250,7 @@ class FCP_Forms__Draw {
             name="<?php $this->e_field_name( $a->name ) ?><?php echo isset( $a->multiple ) ? '[]' : '' ?>"
             id="<?php $this->e_field_id( $a->name ) ?>"
             class="<?php echo !empty( $a->warning ) ? 'fcp-f-invalid' : '' ?>"
+            aria-label="<?php echo $a->title ?>"
             <?php echo isset( $a->multiple ) ? 'multiple' : '' ?>
         >
             <?php
