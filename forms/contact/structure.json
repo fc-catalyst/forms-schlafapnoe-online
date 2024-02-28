@@ -95,12 +95,9 @@
                     "fields" : [
                         {
                             "type" : "text",
-                            "title" : "Ihr Bundesstaat",
+                            "title" : "Ihr Bundesland",
                             "placeholder" : "Bayern",
-                            "name" : "bundesstaat",
-                            "validate" : {
-                                "notEmpty" : true
-                            }
+                            "name" : "bundesland"
                         },
                         {
                             "type" : "text",
