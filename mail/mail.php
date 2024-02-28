@@ -16,13 +16,13 @@ class FCP_FormsMail {
                 'sending_name' => get_bloginfo( 'name' ),
 
                 // ++add dynamic loading by role
-                'accountant' => 'vadim@firmcatalyst.com',
+                'accountant' => 'd.kressner@flexpoint.de',
                 'accountant_name' => 'Accountant',
                 'accountant_locale' => 'de_DE',
-                'moderator' => 'vadim@firmcatalyst.com',//'kontakt@klinikerfahrungen.de',
+                'moderator' => 'd.kressner@flexpoint.de',
                 'moderator_name' => 'Donald Kressner',
                 'moderator_locale' => 'de_DE',
-                'admin' => 'vadim@firmcatalyst.com', // technical purposes
+                'admin' => 'd.kressner@flexpoint.de', // technical purposes
                 'admin_name' => 'Admin', // technical purposes
                 'admin_locale' => 'en_US',
 
